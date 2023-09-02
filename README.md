@@ -44,6 +44,14 @@ Grab the magical TightVNC MSI installer from the mystical official TightVNC webs
    
     ![Magical PC Path](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
 
+    ## Modify 'install-tightvnc.ps1' Example: 
+![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
+
+    - The image on the top is from The DC that contain the shared folder, from this folder we will copy and past the script into the GPO Path [ Step 6 ] 
+   
+    - The '$pcInstallerPath' has to be set to the '.msi' file path from the PC
+![image](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
+
 ## Enchanting TightVNC on the Domain Controller
 
 To unleash the full potential of TightVNC, embark on this magical quest to install it on your domain controller:
