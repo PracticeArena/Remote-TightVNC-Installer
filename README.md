@@ -77,7 +77,7 @@ To unleash the full potential of TightVNC, embark on this magical quest to insta
 11. As the PCs receive the GPO, TightVNC Server will be silently installed, and the enchanting password you've conjured shall be set.
 
 ## POC
-![POC](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/a8cdf591-6097-413b-b4bd-1549a7dad9e5)
+![POC](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/adf31860-3c17-47a2-a077-c9847bccefd6)
 
 
 Feel the magic, embrace the ease, and let your VNC GPO Deployment be a spellbinding experience! 🪄✨
