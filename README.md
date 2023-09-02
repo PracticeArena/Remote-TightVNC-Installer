@@ -1,57 +1,41 @@
-# Remote TightVNC Installer
+# TightVNC Installer Script
 
-## Overview
+This script automates the installation of TightVNC Server on Windows PCs via Group Policy (GPO). It allows for a silent installation and sets a predefined password for VNC authentication.
 
-This script allows you to remotely install TightVNC Server on a Windows PC from a central server or domain controller. TightVNC is a free and open-source remote control software that allows you to access and control a remote computer over a network.
+## Requirements
 
-## Prerequisites
+- Active Directory environment
+- Administrative access to the target PCs
+- The TightVNC MSI installer file
 
-Before using this script, make sure you have the following:
+## Download TightVNC Installer
 
-- A Windows PC where you want to install TightVNC.
-- Access to a central server or domain controller.
-- The TightVNC installer (MSI file) accessible from the target PC.
-- Administrative privileges on the target PC.
+You can download the TightVNC MSI installer from the official TightVNC website:
+
+[Download TightVNC MSI Installer](https://www.tightvnc.com/download.php)
 
 ## Usage
 
-1. Clone or download this repository to your central server or domain controller.
+1. Download the TightVNC MSI installer from the provided link.
 
-2. Modify the script with the necessary information:
-   - Set the execution policy to RemoteSigned (for the current session).
-   - Define the UNC path to the TightVNC installer on the PC.
-   - Define the desired password for TightVNC.
+2. Place the MSI installer file in a shared directory accessible from your Active Directory server.
 
-3. Run the script from the central server or domain controller. This will remotely install TightVNC Server on the specified PC.
+3. Modify the script (`install-tightvnc.ps1`) as needed. Specifically, set the `$pcInstallerPath` variable to the UNC path of the MSI installer on the shared directory and customize the `$password` variable with your desired VNC password.
 
-4. After installation, TightVNC Server should be running on the PC. You can use a TightVNC Viewer to connect to it using the PC's IP address.
+4. Create a new Group Policy Object (GPO) or edit an existing one in your Active Directory environment.
 
-## Script Parameters
+5. Navigate to the "Computer Configuration" section of the GPO, and under "Policies," select "Windows Settings."
 
-- `$pcInstallerPath`: The UNC path to the TightVNC installer (MSI file) on the PC.
-- `$password`: The password you want to set for TightVNC authentication.
+6. Right-click on "Scripts (Startup/Shutdown)" and choose "Add a Script."
 
-## Example
+7. Browse and select the modified `install-tightvnc.ps1` script.
 
-```powershell
-# Set the execution policy to RemoteSigned for the current session
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
+8. Link the GPO to the Organizational Unit (OU) containing the target PCs.
 
-# Define the UNC path to the TightVNC installer on the PC
-$pcInstallerPath = "\\192.168.10.100\Scripts\tightvnc-2.8.81-gpl-setup-64bit.msi"
+9. When the PCs receive the GPO, TightVNC Server will be silently installed and configured with the specified password.
 
-# Define the password
-$password = "trotadmin"  # Change this to your desired password
+## Note
 
-# Check if the installer file exists on the PC
-if (Test-Path $pcInstallerPath -PathType Leaf) {
-    # Install TightVNC Server with the specified password
-    Start-Process -FilePath msiexec.exe -ArgumentList "/i `"$pcInstallerPath`" /quiet /norestart ADDLOCAL=Server SERVER_REGISTER_SERVICE=1 SERVER_ADD_FIREWALL_EXCEPTION=1 SET_USEVNCAUTHENTICATION=1 VALUE_OF_USEVNCAUTHENTICATION=1 SET_PASSWORD=1 VALUE_OF_PASSWORD=`"$password`"" -Wait
+This script is intended for automating the installation of TightVNC Server with preconfigured settings within an Active Directory environment. Ensure that you have the necessary permissions to deploy software via GPO.
 
-    Write-Host "TightVNC installation complete."
-
-    # Set the execution policy back to Restricted
-    Set-ExecutionPolicy -ExecutionPolicy Restricted -Scope Process -Force
-} else {
-    Write-Host "TightVNC installer not found in the specified path on the PC."
-}
+For more information about TightVNC, visit the [TightVNC website](https://www.tightvnc.com/).
