@@ -38,7 +38,7 @@ Before using this script, make sure you have the following:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
 
 # Define the UNC path to the TightVNC installer on the PC
-$pcInstallerPath = "\\192.168.10.100\Scripts\tightvnc-2.8.81-gpl-setup-64bit.msi"
+$pcInstallerPath = "\\<DC_IP>\<PathTo>\tightvnc-2.8.81-gpl-setup-64bit.msi"
 
 # Define the password
 $password = "your_password"  # Change this to your desired password
