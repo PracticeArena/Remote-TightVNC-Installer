@@ -41,7 +41,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process -Force
 $pcInstallerPath = "\\192.168.10.100\Scripts\tightvnc-2.8.81-gpl-setup-64bit.msi"
 
 # Define the password
-$password = "trotadmin"  # Change this to your desired password
+$password = "your_password"  # Change this to your desired password
 
 # Check if the installer file exists on the PC
 if (Test-Path $pcInstallerPath -PathType Leaf) {
