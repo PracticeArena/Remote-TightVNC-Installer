@@ -1,4 +1,4 @@
-# TightVNC Installer Script
+# VNC GPO Deployment Guide
 
 This script automates the installation of TightVNC Server on Windows PCs via Group Policy (GPO). It allows for a silent installation and sets a predefined password for VNC authentication.
 
