@@ -47,18 +47,18 @@ Grab the magical TightVNC MSI installer from the mystical official TightVNC webs
 
 To unleash the full potential of TightVNC, embark on this magical quest to install it on your domain controller:
 
-1. As a wizard with administrative privileges, login to your domain controller.
+1. Log in to your domain controller with administrative privileges.
 
-2. With a wave of your wand, open PowerShell ISE as an administrator.
+2. Open PowerShell ISE by right-clicking and choosing "Run as Administrator."
 
 3. Copy and paste the "TightVNC_Installation_DC_Script.ps1" into PowerShell ISE with Administrator Privilege and Run the code. Watch as the magic unfolds!
     ![Wizardry Unleashed](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
    
-4. Forge a new Group Policy Object (GPO) or alter an existing one within your Active Directory realm.
+4. Create a new Group Policy Object (GPO) or modify an existing one in your Active Directory domain.
 
-5. Venture to the "Computer Configuration" section of the GPO and under "Policies," select "Windows Settings."
+5. Navigate to "Computer Configuration" in the GPO and select "Windows Settings" under "Policies."
 
-6. Click on 'Scripts,' as if summoning spirits, and then 'Startup/Shutdown.'
+6. Navigate to "Scripts" and select "Startup/Shutdown" within the GPO settings.
 
 7. Under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse.' Paste the 'install-tightvnc.ps1' [crafted in Step 3], and press 'OK.' With a final incantation of 'Apply' and 'OK,' the magic is sealed!
 
