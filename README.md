@@ -29,6 +29,13 @@ You can download the TightVNC MSI installer from the official TightVNC website:
    # Define the password
    $password = "your_password"  # Change this to your desired password
 
+## Modify 'install-tightvnc.ps1' Example: 
+![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
+
+
+   - The image is from The DC that contain the shared folder, from this folder we will copy and past the script into the GPO Path [ Step 6 ] 
+   - The '$pcInstallerPath' has to be set to the '.msi' file from the PC
+
 
 ## Installing TightVNC on the Domain Controller
 
