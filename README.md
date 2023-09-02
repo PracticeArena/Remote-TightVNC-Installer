@@ -26,8 +26,6 @@ Grab the magical TightVNC MSI installer from the mystical official TightVNC webs
 
 2. **Place** the MSI installer file in a shared directory accessible from your Active Directory server. 
 
-    ![Wizardry Unleashed](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
-
 3. **Modify the script** (`install-tightvnc.ps1`) as if you were brewing a potion. Set the `$pcInstallerPath` variable to the UNC path of the MSI installer on the shared directory and conjure up the `$password` variable with your desired VNC password.
 
    ```powershell
@@ -61,7 +59,8 @@ To unleash the full potential of TightVNC, embark on this magical quest to insta
 2. With a wave of your wand, open PowerShell ISE as an administrator.
 
 3. Copy and paste the "TightVNC_Installation_DC_Script.ps1" into PowerShell ISE with Administrator Privilege and Run the code. Watch as the magic unfolds!
-
+    ![Wizardry Unleashed](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
+   
 4. Forge a new Group Policy Object (GPO) or alter an existing one within your Active Directory realm.
 
 5. Venture to the "Computer Configuration" section of the GPO and under "Policies," select "Windows Settings."
@@ -70,11 +69,11 @@ To unleash the full potential of TightVNC, embark on this magical quest to insta
 
 7. Under the 'PowerShell Scripts' tab, click 'Add,' then 'Browse.' Cast your gaze upon the 'install-tightvnc.ps1' [crafted in Step 3], and press 'OK.' With a final incantation of 'Apply' and 'OK,' the magic is sealed!
 
-9. Link the GPO to the Organizational Unit (OU) housing the target PCs. You may need to employ your enchanting skills.
+8. Link the GPO to the Organizational Unit (OU) housing the target PCs. You may need to employ your enchanting skills.
 
-10. Check for read+execute permissions and verify the GPO Security Filtering to ensure the magic flows freely.
+9. Check for read+execute permissions and verify the GPO Security Filtering to ensure the magic flows freely.
 
-11. As the PCs receive the GPO, TightVNC Server will be silently installed, and the enchanting password you've conjured shall be set.
+10. As the PCs receive the GPO, TightVNC Server will be silently installed, and the enchanting password you've conjured shall be set.
 
 ## POC
 ![POC](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/adf31860-3c17-47a2-a077-c9847bccefd6)
