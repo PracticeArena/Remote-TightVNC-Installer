@@ -38,7 +38,7 @@ Grab the magical TightVNC MSI installer from the mystical official TightVNC webs
     ## Modify 'install-tightvnc.ps1' Example: 
 ![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
 
-    - The image on the top is from The DC that contain the shared folder, from this folder we will copy and past the script into the GPO Path [ Step 6 ] 
+    - The image on the top is from The DC that contain the shared folder, from this folder we will copy and past the script into the GPO Path [ Step 7 ] 
    
     - The '$pcInstallerPath' has to be set to the '.msi' file path from the PC
 ![image](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
@@ -60,7 +60,7 @@ To unleash the full potential of TightVNC, embark on this magical quest to insta
 
 6. Click on 'Scripts,' as if summoning spirits, and then 'Startup/Shutdown.'
 
-7. Under the 'PowerShell Scripts' tab, click 'Add,' then 'Browse.' Cast your gaze upon the 'install-tightvnc.ps1' [crafted in Step 3], and press 'OK.' With a final incantation of 'Apply' and 'OK,' the magic is sealed!
+7. Under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse.' Paste the 'install-tightvnc.ps1' [crafted in Step 3], and press 'OK.' With a final incantation of 'Apply' and 'OK,' the magic is sealed!
 
 8. Link the GPO to the Organizational Unit (OU) housing the target PCs. You may need to employ your enchanting skills.
 
