@@ -20,6 +20,10 @@ You can download the TightVNC MSI installer from the official TightVNC website:
 
 2. **Place** the MSI installer file in a shared directory accessible from your Active Directory server.
 
+- Run TightVNC_Installation_DC_Script.ps1 on the DC, This will install the .msi on the DC:
+![VNC](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
+
+
 3. **Modify the script** (`install-tightvnc.ps1`) as needed. Specifically, set the `$pcInstallerPath` variable to the UNC path of the MSI installer on the shared directory and customize the `$password` variable with your desired VNC password.
 
    ```powershell
