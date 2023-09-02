@@ -35,13 +35,6 @@ Grab the magical TightVNC MSI installer from the mystical official TightVNC webs
    # Define the password
    $password = "your_password"  # Change this to your desired password
 
-    ![Script Configuration Magic](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
-
-   - Behold the image, a glimpse of the DC, where the shared folder lies, and from which the script shall journey forth into the GPO Path [ Step 6 ].
-   - The '$pcInstallerPath' shall be the path to the '.msi' file on the PC.
-   
-    ![Magical PC Path](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
-
     ## Modify 'install-tightvnc.ps1' Example: 
 ![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
 
