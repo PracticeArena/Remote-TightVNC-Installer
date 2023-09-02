@@ -35,6 +35,12 @@ You can download the TightVNC MSI installer from the official TightVNC website:
 9. When the PCs receive the GPO, TightVNC Server will be silently installed and configured with the specified password.
 
 ## Note
+=======
+# Define the UNC path to the TightVNC installer on the PC
+$pcInstallerPath = "\\<DC_IP>\<PathTo>\tightvnc-2.8.81-gpl-setup-64bit.msi"   # Change this to your desired IP + Path
+
+# Define the password
+$password = "your_password"  # Change this to your desired password
 
 This script is intended for automating the installation of TightVNC Server with preconfigured settings within an Active Directory environment. Ensure that you have the necessary permissions to deploy software via GPO.
 
