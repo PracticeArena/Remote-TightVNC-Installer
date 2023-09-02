@@ -34,7 +34,9 @@ You can download the TightVNC MSI installer from the official TightVNC website:
 
 
    - The image is from The DC that contain the shared folder, from this folder we will copy and past the script into the GPO Path [ Step 6 ] 
-   - The '$pcInstallerPath' has to be set to the '.msi' file from the PC
+   - The '$pcInstallerPath' has to be set to the '.msi' file path from the PC
+![image](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
+
 
 
 ## Installing TightVNC on the Domain Controller
@@ -53,7 +55,7 @@ To make TightVNC work correctly, you need to install it on your domain controlle
 
 6. Click on Scripts - Duble Click on (Startup/Shutdown)"
 
-7. under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse' -> Paste the 'install-tightvnc.ps1' [that we edit on Usage Step 3] And preass 'OK' -> 'Apply' -> 'OK' 
+7. Under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse' -> Paste the 'install-tightvnc.ps1' [that we edit on Usage Step 3] And preass 'OK' -> 'Apply' -> 'OK' 
 
 9. Link the GPO to the Organizational Unit (OU) containing the target PCs. You may need to use Enforces.
 
