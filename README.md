@@ -53,7 +53,7 @@ To make TightVNC work correctly, you need to install it on your domain controlle
 
 6. Click on Scripts - Duble Click on (Startup/Shutdown)"
 
-7. under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse' -> Past the 'install-tightvnc.ps1' [that we edit on Step 3] And preass 'OK' -> 'Apply' -> 'OK' 
+7. under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse' -> Paste the 'install-tightvnc.ps1' [that we edit on Usage Step 3] And preass 'OK' -> 'Apply' -> 'OK' 
 
 9. Link the GPO to the Organizational Unit (OU) containing the target PCs. You may need to use Enforces.
 
