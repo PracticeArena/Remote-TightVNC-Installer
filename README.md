@@ -15,46 +15,48 @@ Before you start, make sure you have:
 **Step 1:** Download the TightVNC MSI installer from the official website:
 [Download TightVNC MSI Installer](https://www.tightvnc.com/download.php)
 
-**Step 2:** Place the downloaded MSI installer file in a shared folder that's accessible from your Active Directory server. 
+**Step 2:** Place the downloaded MSI installer file in a shared folder that's accessible from your Active Directory server.
 
-    ![Wizardry Unleashed](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
+![Wizardry Unleashed](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/50c64be4-9a53-43bf-9760-f35631f94b46)
+
+## 🛠️ Configuration (Modify `install-tightvnc.ps1`)
 
 **Step 3:** Modify the script (`install-tightvnc.ps1`) as follows:
 
-   ```powershell
-   # Define the UNC path to the TightVNC installer on the PC
-   $pcInstallerPath = "\\<DC_IP>\<PathTo>\tightvnc-2.8.81-gpl-setup-64bit.msi"   # Change this to your desired IP + Path
+```powershell
+# Define the UNC path to the TightVNC installer on the PC
+$pcInstallerPath = "\\<DC_IP>\<PathTo>\tightvnc-2.8.81-gpl-setup-64bit.msi"   # Change this to your desired IP + Path
 
-   # Define the password
-   $password = "your_password"  # Change this to your desired password
+# Define the password
+$password = "your_password"  # Change this to your desired password
 
-    ![Script Configuration Magic](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
+## Modify 'install-tightvnc.ps1' Example: 
+![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
 
-   - Set the desired VNC password in '$password'.
-   - Update '$pcInstallerPath' to point to the '.msi' file path on the PC.
-   
-    ![Magical PC Path](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
+- Set the desired VNC password in '$password'.
+- Update '$pcInstallerPath' to point to the '.msi' file path on the PC.
+
+![Magical PC Path](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/2fa7eb1b-4302-4871-a288-377295447df7)
 
 ## Deploy TightVNC
 
 **Step 4:** Install TightVNC on your domain controller:
 
-- Log in to your domain controller with administrative privileges.
-- Open PowerShell ISE as an administrator.
-- Copy and paste the content of "TightVNC_Installation_DC_Script.ps1" into PowerShell ISE and run the code.
+1. Log in to your domain controller with administrative privileges.
+2. Open PowerShell ISE as an administrator.
+3. Copy and paste the content of "TightVNC_Installation_DC_Script.ps1" into PowerShell ISE and run the code.
 
 **Step 5:** Set up Group Policy:
 
-- Create a new Group Policy Object (GPO) or modify an existing one in your Active Directory domain.
-- Navigate to "Computer Configuration" in the GPO and select "Windows Settings" under "Policies."
-- Under GPO settings, go to "Scripts" and select "Startup/Shutdown."
-- Under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse.' Paste the 'install-tightvnc.ps1' script (modified in Step 3), and press 'OK.' Save your changes.
+1. Create a new Group Policy Object (GPO) or modify an existing one in your Active Directory domain.
+2. Navigate to "Computer Configuration" in the GPO and select "Windows Settings" under "Policies."
+3. Under GPO settings, go to "Scripts" and select "Startup/Shutdown."
+4. Under the 'PowerShell Scripts' tab, click 'Add' -> 'Browse.' Paste the 'install-tightvnc.ps1' script (modified in Step 3), and press 'OK.' Save your changes.
 
 **Step 6:** Apply the GPO:
 
 - Link the GPO to the Organizational Unit (OU) containing the target PCs.
 - Verify read and execute permissions and GPO Security Filtering.
-
 
 ## POC
 ![POC](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/adf31860-3c17-47a2-a077-c9847bccefd6)
