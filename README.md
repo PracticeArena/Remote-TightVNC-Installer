@@ -26,10 +26,10 @@ Before you start, make sure you have:
 ```powershell
 # Define the UNC path to the TightVNC installer on the PC
 $pcInstallerPath = "\\<DC_IP>\<PathTo>\tightvnc-2.8.81-gpl-setup-64bit.msi"   # Change this to your desired IP + Path
-```
+
 # Define the password
 $password = "your_password"  # Change this to your desired password
-
+```
 ## Modify 'install-tightvnc.ps1' Example: 
 ![install-script-configuration](https://github.com/DorArlaki/Remote-TightVNC-Installer/assets/107101354/5eff632f-bd92-4b99-a3ec-7faaebad524f)
 
